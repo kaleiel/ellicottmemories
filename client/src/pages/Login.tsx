@@ -45,7 +45,7 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center p-6 bg-stone-50/50">
       <Card className="w-full max-w-sm shadow-xl border-border/50">
         <CardHeader className="space-y-1 text-center">
-          <CardTitle className="text-3xl font-serif text-primary">Welcome Back</CardTitle>
+          <CardTitle className="text-3xl font-serif text-primary">Welcome!</CardTitle>
           <CardDescription>Enter your details to access the competition</CardDescription>
         </CardHeader>
         <CardContent>
