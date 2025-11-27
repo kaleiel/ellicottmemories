@@ -48,7 +48,7 @@ export function MobileLayout({ children }: MobileLayoutProps) {
         {showNav && (
           <header className="bg-background/80 backdrop-blur-md border-b border-border p-3 flex justify-center items-center">
             <img 
-              src="https://ibb.co/0jh5cTNw" 
+              src="ttps://instasize.com/api/image/fa5c6ce6a0588564e7f50caac66851ac7d4c305ec8cd6e53d6f80722e9135356.png" 
               alt="Old Ellicott City Partnership Logo" 
               className="rounded object-contain"
             />
