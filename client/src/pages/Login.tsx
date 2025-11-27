@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useLocation } from 'wouter';
 import { useStore } from '@/lib/store';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -8,7 +7,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { useToast } from '@/hooks/use-toast';
 
 export default function Login() {
-  const [, setLocation] = useLocation();
   const login = useStore((state) => state.login);
   const { toast } = useToast();
   
@@ -41,7 +39,6 @@ export default function Login() {
     }
 
     login(username, contact);
-    setLocation('/feed');
   };
 
   return (

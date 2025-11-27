@@ -29,10 +29,14 @@ export interface User {
   contact: string; // email or phone
 }
 
+type PageType = 'landing' | 'login' | 'feed' | 'submit' | 'wall';
+
 interface AppState {
   user: User | null;
   posts: Post[];
   wallOfFame: Post[];
+  currentPage: PageType;
+  setCurrentPage: (page: PageType) => void;
   login: (username: string, contact: string) => void;
   logout: () => void;
   resetCache: () => void;
@@ -109,19 +113,22 @@ export const useStore = create<AppState>((set) => ({
   user: null,
   posts: INITIAL_POSTS,
   wallOfFame: WALL_OF_FAME,
+  currentPage: 'landing',
+  
+  setCurrentPage: (page) => set({ currentPage: page }),
   
   login: (username, contact) => {
     const userData = { username, contact };
     localStorage.setItem('voting-app-user', JSON.stringify(userData));
-    set({ user: userData });
+    set({ user: userData, currentPage: 'feed' });
   },
   logout: () => {
     localStorage.removeItem('voting-app-user');
-    set({ user: null, posts: INITIAL_POSTS });
+    set({ user: null, posts: INITIAL_POSTS, currentPage: 'landing' });
   },
   resetCache: () => {
     localStorage.removeItem('voting-app-user');
-    set({ user: null, posts: INITIAL_POSTS });
+    set({ user: null, posts: INITIAL_POSTS, currentPage: 'landing' });
   },
   
   toggleLike: (postId) => set((state) => ({

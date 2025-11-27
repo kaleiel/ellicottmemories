@@ -1,10 +1,10 @@
-import { useLocation } from 'wouter';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import { useStore } from '@/lib/store';
 import { stockImages } from '@/lib/assets';
 
 export default function Landing() {
-  const [, setLocation] = useLocation();
+  const setCurrentPage = useStore((state) => state.setCurrentPage);
 
   return (
     <div className="flex flex-col min-h-screen bg-stone-100 text-stone-900">
@@ -53,7 +53,7 @@ export default function Landing() {
           </p>
           
           <Button 
-            onClick={() => setLocation('/login')}
+            onClick={() => setCurrentPage('login')}
             className="w-full h-14 text-lg font-serif bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20 rounded-xl"
           >
             Join In

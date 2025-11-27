@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useLocation, Link } from 'wouter';
 import { useStore } from '../lib/store';
 import { Home, PlusSquare, Award, LogOut, ArrowUp } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 interface MobileLayoutProps {
@@ -9,13 +9,14 @@ interface MobileLayoutProps {
 }
 
 export function MobileLayout({ children }: MobileLayoutProps) {
-  const [location, setLocation] = useLocation();
   const [showScrollToTop, setShowScrollToTop] = useState(false);
   const mainRef = useRef<HTMLElement>(null);
   const user = useStore((state) => state.user);
+  const currentPage = useStore((state) => state.currentPage);
+  const setCurrentPage = useStore((state) => state.setCurrentPage);
   const resetCache = useStore((state) => state.resetCache);
 
-  const showNav = user && location !== '/' && location !== '/login';
+  const showNav = user && currentPage !== 'login';
 
   useEffect(() => {
     const handleScroll = (e: Event) => {
@@ -38,7 +39,6 @@ export function MobileLayout({ children }: MobileLayoutProps) {
 
   const handleLogout = () => {
     resetCache();
-    setLocation('/');
   };
 
   return (
@@ -86,24 +86,27 @@ export function MobileLayout({ children }: MobileLayoutProps) {
         {/* Bottom Navigation */}
         {showNav && (
           <nav className="fixed bottom-0 max-w-md w-full bg-background border-t border-border flex justify-around py-3 px-2 z-50 safe-area-bottom">
-            <Link href="/feed">
-              <a className={cn("flex flex-col items-center gap-1 p-2 rounded-lg transition-colors", location === '/feed' ? "text-primary" : "text-muted-foreground hover:text-foreground")}>
-                <Home className="w-6 h-6" />
-                <span className="text-xs font-medium">Feed</span>
-              </a>
-            </Link>
-            <Link href="/submit">
-              <a className={cn("flex flex-col items-center gap-1 p-2 rounded-lg transition-colors", location === '/submit' ? "text-primary" : "text-muted-foreground hover:text-foreground")}>
-                <PlusSquare className="w-6 h-6" />
-                <span className="text-xs font-medium">Submit</span>
-              </a>
-            </Link>
-            <Link href="/wall">
-              <a className={cn("flex flex-col items-center gap-1 p-2 rounded-lg transition-colors", location === '/wall' ? "text-primary" : "text-muted-foreground hover:text-foreground")}>
-                <Award className="w-6 h-6" />
-                <span className="text-xs font-medium">The Wall</span>
-              </a>
-            </Link>
+            <button 
+              onClick={() => setCurrentPage('feed')}
+              className={cn("flex flex-col items-center gap-1 p-2 rounded-lg transition-colors", currentPage === 'feed' ? "text-primary" : "text-muted-foreground hover:text-foreground")}
+            >
+              <Home className="w-6 h-6" />
+              <span className="text-xs font-medium">Feed</span>
+            </button>
+            <button 
+              onClick={() => setCurrentPage('submit')}
+              className={cn("flex flex-col items-center gap-1 p-2 rounded-lg transition-colors", currentPage === 'submit' ? "text-primary" : "text-muted-foreground hover:text-foreground")}
+            >
+              <PlusSquare className="w-6 h-6" />
+              <span className="text-xs font-medium">Submit</span>
+            </button>
+            <button 
+              onClick={() => setCurrentPage('wall')}
+              className={cn("flex flex-col items-center gap-1 p-2 rounded-lg transition-colors", currentPage === 'wall' ? "text-primary" : "text-muted-foreground hover:text-foreground")}
+            >
+              <Award className="w-6 h-6" />
+              <span className="text-xs font-medium">The Wall</span>
+            </button>
           </nav>
         )}
       </div>

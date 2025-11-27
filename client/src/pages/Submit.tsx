@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-import { useLocation } from 'wouter';
 import { useStore } from '@/lib/store';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -10,8 +9,8 @@ import { useToast } from '@/hooks/use-toast';
 import { sponsoringBusinesses } from '@/lib/businesses';
 
 export default function Submit() {
-  const [, setLocation] = useLocation();
   const addPost = useStore((state) => state.addPost);
+  const setCurrentPage = useStore((state) => state.setCurrentPage);
   const { toast } = useToast();
   const retroFileInputRef = useRef<HTMLInputElement>(null);
   const recreatedFileInputRef = useRef<HTMLInputElement>(null);
@@ -24,8 +23,15 @@ export default function Submit() {
   const [recreatedLocation, setRecreatedLocation] = useState('');
   const [recreatedCustomLocation, setRecreatedCustomLocation] = useState('');
   
-  const isLocationValid = (location: string) => location && location !== '';
-  const isFormReady = recreatedImage && isLocationValid(recreatedLocation);
+  const isLocationValid = (location: string, customLocation: string) => {
+    if (location === 'custom') return customLocation && customLocation.trim() !== '';
+    return location && location !== '';
+  };
+  
+  const isFormReady = retroImage && 
+    recreatedImage && 
+    isLocationValid(retroLocation, retroCustomLocation) && 
+    isLocationValid(recreatedLocation, recreatedCustomLocation);
 
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>, isRetro: boolean) => {
     const file = e.target.files?.[0];
@@ -52,17 +58,26 @@ export default function Submit() {
   };
 
   const handleSubmit = () => {
-    if (!recreatedImage) return;
+    if (!isFormReady) return;
     
-    const finalRetroLocation = retroLocation || retroCustomLocation;
-    const finalRecreatedLocation = recreatedLocation || recreatedCustomLocation;
+    const finalRetroLocation = retroLocation === 'custom' ? retroCustomLocation : retroLocation;
+    const finalRecreatedLocation = recreatedLocation === 'custom' ? recreatedCustomLocation : recreatedLocation;
     
-    addPost(recreatedImage, description, retroImage, finalRetroLocation, finalRecreatedLocation);
+    addPost(recreatedImage, description, retroImage || undefined, finalRetroLocation, finalRecreatedLocation);
+    
+    setDescription('');
+    setRetroImage(null);
+    setRecreatedImage(null);
+    setRetroLocation('');
+    setRetroCustomLocation('');
+    setRecreatedLocation('');
+    setRecreatedCustomLocation('');
+    
     toast({
       title: "Submission Received!",
       description: "Your photo has been added to the competition.",
     });
-    setLocation('/feed');
+    setCurrentPage('feed');
   };
 
   return (
