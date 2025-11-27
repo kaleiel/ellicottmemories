@@ -46,11 +46,11 @@ export function MobileLayout({ children }: MobileLayoutProps) {
       <div className="w-full max-w-md bg-card shadow-2xl min-h-screen relative flex flex-col border-x border-border/50">
         {/* Top Bar (only for logged in) */}
         {showNav && (
-          <header className="bg-background/80 backdrop-blur-md border-b border-border p-3 flex justify-center items-center">
+          <header className="bg-background border-b border-border p-3 flex justify-center items-center">
             <img 
-              src="ttps://instasize.com/api/image/fa5c6ce6a0588564e7f50caac66851ac7d4c305ec8cd6e53d6f80722e9135356.png" 
+              src="https://instasize.com/api/image/fa5c6ce6a0588564e7f50caac66851ac7d4c305ec8cd6e53d6f80722e9135356.png" 
               alt="Old Ellicott City Partnership Logo" 
-              className="rounded object-contain"
+              className="object-contain"
             />
             <button 
               onClick={handleLogout} 

@@ -7,13 +7,13 @@ export default function Landing() {
   const setCurrentPage = useStore((state) => state.setCurrentPage);
 
   return (
-    <div className="flex flex-col min-h-screen bg-stone-100 text-stone-900">
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
       {/* Logo Header */}
-      <div className="w-full bg-white shadow-sm py-4 px-6 flex justify-center">
+      <div className="w-full bg-background py-4 px-6 flex justify-center">
         <motion.img 
-          src="ttps://instasize.com/api/image/fa5c6ce6a0588564e7f50caac66851ac7d4c305ec8cd6e53d6f80722e9135356.png"
+          src="https://instasize.com/api/image/fa5c6ce6a0588564e7f50caac66851ac7d4c305ec8cd6e53d6f80722e9135356.png"
           alt="Old Ellicott City Partnership Logo"
-          className="rounded object-contain shadow-md"
+          className="rounded object-contain"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
