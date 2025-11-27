@@ -11,7 +11,7 @@ export default function Landing() {
       {/* Logo Header */}
       <div className="w-full bg-background py-4 px-6 flex justify-center">
         <motion.img 
-          src="https://instasize.com/api/image/fa5c6ce6a0588564e7f50caac66851ac7d4c305ec8cd6e53d6f80722e9135356.png"
+          src="/logo_main.png"
           alt="Old Ellicott City Partnership Logo"
           className="rounded object-contain"
           initial={{ opacity: 0, scale: 0.9 }}

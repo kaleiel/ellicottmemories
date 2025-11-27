@@ -48,9 +48,9 @@ export function MobileLayout({ children }: MobileLayoutProps) {
         {showNav && (
           <header className="bg-background border-b border-border p-3 flex justify-center items-center">
             <img 
-              src="https://instasize.com/api/image/fa5c6ce6a0588564e7f50caac66851ac7d4c305ec8cd6e53d6f80722e9135356.png" 
+              src="/logo_layout.png" 
               alt="Old Ellicott City Partnership Logo" 
-              className="object-contain"
+              className="object-contain max-w-[50%] h-auto"
             />
             <button 
               onClick={handleLogout} 
