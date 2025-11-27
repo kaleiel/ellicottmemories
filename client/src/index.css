@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Rustic / Historic Palette */
+  --color-background: hsl(34 30% 95%); /* Old Lace / Linen */
+  --color-foreground: hsl(30 10% 20%); /* Dark Warm Grey */
+  
+  --color-card: hsl(34 30% 98%);
+  --color-card-foreground: hsl(30 10% 20%);
+  
+  --color-popover: hsl(34 30% 98%);
+  --color-popover-foreground: hsl(30 10% 20%);
+  
+  --color-primary: hsl(10 60% 45%); /* Brick Red */
+  --color-primary-foreground: hsl(34 30% 95%);
+  
+  --color-secondary: hsl(180 20% 35%); /* River Stone / Slate */
+  --color-secondary-foreground: hsl(34 30% 95%);
+  
+  --color-muted: hsl(34 20% 88%);
+  --color-muted-foreground: hsl(30 10% 40%);
+  
+  --color-accent: hsl(40 70% 50%); /* Goldenrod / Brass */
+  --color-accent-foreground: hsl(30 10% 20%);
+  
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+  
+  --color-border: hsl(30 15% 85%);
+  --color-input: hsl(30 15% 85%);
+  --color-ring: hsl(10 60% 45%);
+  
+  --color-chart-1: hsl(10 60% 45%);
+  --color-chart-2: hsl(180 20% 35%);
+  --color-chart-3: hsl(40 70% 50%);
+  --color-chart-4: hsl(30 40% 60%);
+  --color-chart-5: hsl(200 30% 50%);
+
+  --font-sans: 'Montserrat', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold;
+  }
+}
