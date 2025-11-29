@@ -9,43 +9,43 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   
-  /* Rustic / Historic Palette */
-  --color-background: hsl(34 30% 95%); /* Old Lace / Linen */
-  --color-foreground: hsl(30 10% 20%); /* Dark Warm Grey */
+  /* Old Ellicott City Brand Palette */
+  --color-background: #F5F0E0; /* Antique Ivory */
+  --color-foreground: #452829; /* Earth Brown */
   
-  --color-card: hsl(34 30% 98%);
-  --color-card-foreground: hsl(30 10% 20%);
+  --color-card: #F5F0E0; /* Antique Ivory */
+  --color-card-foreground: #452829; /* Earth Brown */
   
-  --color-popover: hsl(34 30% 98%);
-  --color-popover-foreground: hsl(30 10% 20%);
+  --color-popover: #F5F0E0; /* Antique Ivory */
+  --color-popover-foreground: #452829; /* Earth Brown */
   
-  --color-primary: hsl(10 60% 45%); /* Brick Red */
-  --color-primary-foreground: hsl(34 30% 95%);
+  --color-primary: #F71F1F; /* OEC Red */
+  --color-primary-foreground: #F5F0E0; /* Antique Ivory */
   
-  --color-secondary: hsl(180 20% 35%); /* River Stone / Slate */
-  --color-secondary-foreground: hsl(34 30% 95%);
+  --color-secondary: #3C5A60; /* Patapsco Blue */
+  --color-secondary-foreground: #F5F0E0; /* Antique Ivory */
   
-  --color-muted: hsl(34 20% 88%);
-  --color-muted-foreground: hsl(30 10% 40%);
+  --color-muted: #D8D8D8; /* Light Gray */
+  --color-muted-foreground: #874921; /* Rustic Brown */
   
-  --color-accent: hsl(40 70% 50%); /* Goldenrod / Brass */
-  --color-accent-foreground: hsl(30 10% 20%);
+  --color-accent: #C1A264; /* Brass */
+  --color-accent-foreground: #452829; /* Earth Brown */
   
-  --color-destructive: hsl(0 84% 60%);
-  --color-destructive-foreground: hsl(0 0% 98%);
+  --color-destructive: #F71F1F; /* OEC Red */
+  --color-destructive-foreground: #F5F0E0; /* Antique Ivory */
   
-  --color-border: hsl(30 15% 85%);
-  --color-input: hsl(30 15% 85%);
-  --color-ring: hsl(10 60% 45%);
+  --color-border: #D8D8D8; /* Light Gray */
+  --color-input: #F5F0E0; /* Antique Ivory */
+  --color-ring: #F71F1F; /* OEC Red */
   
-  --color-chart-1: hsl(10 60% 45%);
-  --color-chart-2: hsl(180 20% 35%);
-  --color-chart-3: hsl(40 70% 50%);
-  --color-chart-4: hsl(30 40% 60%);
-  --color-chart-5: hsl(200 30% 50%);
+  --color-chart-1: #F71F1F; /* OEC Red */
+  --color-chart-2: #3C5A60; /* Patapsco Blue */
+  --color-chart-3: #C1A264; /* Brass */
+  --color-chart-4: #874921; /* Rustic Brown */
+  --color-chart-5: #452829; /* Earth Brown */
 
-  --font-sans: 'Montserrat', sans-serif;
-  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Cardo', serif;
+  --font-serif: 'Monotype Corsiva', serif;
   
   --radius: 0.5rem;
 }

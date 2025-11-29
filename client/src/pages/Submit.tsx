@@ -98,7 +98,7 @@ export default function Submit() {
           />
           <div 
             onClick={() => triggerFileInput(true)}
-            className="border-2 border-dashed border-border rounded-lg aspect-video flex flex-col items-center justify-center bg-stone-50 cursor-pointer hover:bg-stone-100 transition-colors relative overflow-hidden group"
+            className="border-2 border-dashed border-border rounded-lg aspect-video flex flex-col items-center justify-center bg-background cursor-pointer hover:bg-muted transition-colors relative overflow-hidden group"
           >
             {retroImage ? (
               <>
@@ -162,7 +162,7 @@ export default function Submit() {
           />
           <div 
             onClick={() => triggerFileInput(false)}
-            className="border-2 border-dashed border-border rounded-lg aspect-video flex flex-col items-center justify-center bg-stone-50 cursor-pointer hover:bg-stone-100 transition-colors relative overflow-hidden group"
+            className="border-2 border-dashed border-border rounded-lg aspect-video flex flex-col items-center justify-center bg-background cursor-pointer hover:bg-muted transition-colors relative overflow-hidden group"
           >
             {recreatedImage ? (
               <>
