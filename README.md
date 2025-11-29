@@ -1,6 +1,6 @@
 # Old Ellicott City Photo Competition
 
-A mobile-first web application for Old Ellicott City Partnership's 9-month photo competition where users recreate historical memories and compete for recognition on the Wall of Fame.
+A mobile-first web application mockup for Old Ellicott City Partnership's 9-month photo competition where users recreate historical memories and compete for recognition on the Wall of Fame.
 
 ## Features
 
@@ -10,8 +10,8 @@ A mobile-first web application for Old Ellicott City Partnership's 9-month photo
 - **Wall of Fame** - Displays past winners and celebrates top submissions
 - **Mobile-First Design** - Fully responsive interface optimized for mobile devices
 - **Swipeable Carousel** - Touch-enabled photo carousel for browsing submissions
-- **User Authentication** - Simple login system with email/phone and username
-- **Real-Time Interactions** - Vote, comment, and engage with other submissions
+- **User Authentication** - Simple dummy login system with email/phone and arbitrary username
+- **Real-Time Interactions** - Vote, comment, and engage with mock submissions
 
 ## Tech Stack
 
@@ -174,7 +174,7 @@ The app routes all navigation through state management (no URL changes), making 
 ### Updating Logos
 - Replace `client/public/logo_main.png` for the landing page logo
 - Replace `client/public/logo_layout.png` for the navbar logo
-- No code changes needed - logos update automatically
+- No code changes needed - logos update automatically once rebuilt and deployed
 
 ## Development Guidelines
 
@@ -188,10 +188,7 @@ The app routes all navigation through state management (no URL changes), making 
 
 Open Graph and Twitter Card meta tags are configured in `client/index.html` and should be updated when the app name or description changes.
 
-## License
-
-© Old Ellicott City Partnership. All rights reserved.
 
 ## Contact
 
-For questions or support, contact the Old Ellicott City Partnership team.
+For questions or support, contact the kmekonnen2@stevenson.edu
