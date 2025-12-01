@@ -140,9 +140,11 @@ export default function Feed() {
                 <Button 
                   variant="ghost" 
                   size="sm"
-                  className={cn("flex items-center gap-2 hover:bg-primary/10 transition-colors", post.isLiked ? "text-primary" : "text-muted-foreground")}
+                  disabled={post.user === user?.username}
+                  className={cn("flex items-center gap-2 hover:bg-primary/10 transition-colors disabled:opacity-50 disabled:cursor-not-allowed", post.isLiked ? "text-primary" : "text-muted-foreground")}
                   onClick={() => setVoteConfirmId(post.id)}
                   data-testid={`button-vote-${post.id}`}
+                  title={post.user === user?.username ? "You can't vote on your own submission" : ""}
                 >
                   <ThumbsUp className={cn("w-5 h-5", post.isLiked ? "fill-primary" : "")} />
                   <span className="text-sm font-medium">Vote</span>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useStore } from '../lib/store';
-import { Home, PlusSquare, Award, LogOut, ArrowUp } from 'lucide-react';
+import { Home, PlusSquare, Award, LogOut, ArrowUp, Gift } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -106,6 +106,13 @@ export function MobileLayout({ children }: MobileLayoutProps) {
             >
               <Award className="w-6 h-6" />
               <span className="text-xs font-medium">The Wall</span>
+            </button>
+            <button 
+              onClick={() => setCurrentPage('rewards')}
+              className={cn("flex flex-col items-center gap-1 p-2 rounded-lg transition-colors", currentPage === 'rewards' ? "text-primary" : "text-muted-foreground hover:text-foreground")}
+            >
+              <Gift className="w-6 h-6" />
+              <span className="text-xs font-medium">Rewards</span>
             </button>
           </nav>
         )}

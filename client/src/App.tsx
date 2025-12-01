@@ -11,6 +11,7 @@ import Login from "@/pages/Login";
 import Feed from "@/pages/Feed";
 import Submit from "@/pages/Submit";
 import Wall from "@/pages/Wall";
+import Rewards from "@/pages/Rewards";
 
 function AppContent() {
   const user = useStore((state) => state.user);
@@ -40,6 +41,8 @@ function AppContent() {
         return <Submit />;
       case 'wall':
         return <Wall />;
+      case 'rewards':
+        return <Rewards />;
       default:
         return <Landing />;
     }
