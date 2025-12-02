@@ -51,7 +51,7 @@ export default function Rewards() {
           <CardContent className="space-y-3 text-sm">
             <div>
               <p className="font-semibold text-foreground mb-1">📸 Photo Competition</p>
-              <p className="text-muted-foreground">22 votes on a submission = 10,000 points</p>
+              <p className="text-muted-foreground">16 votes on a submission = 10,000 points</p>
             </div>
             <div>
               <p className="font-semibold text-foreground mb-1">🏪 In-Store Redemption</p>
