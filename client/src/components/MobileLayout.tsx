@@ -50,7 +50,7 @@ export function MobileLayout({ children }: MobileLayoutProps) {
             <img 
               src="/logo_layout.png" 
               alt="Old Ellicott City Partnership Logo" 
-              className="object-contain max-w-[50%] max-w-[10%]"
+              style="max-height: 15vh; height: auto; width: auto;"
             />
             <button 
               onClick={handleLogout} 
