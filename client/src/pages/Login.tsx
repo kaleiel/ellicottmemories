@@ -29,11 +29,20 @@ export default function Login() {
       return;
     }
 
-    if (username.length < 3) {
+    if (username.length < 1) {
       toast({
         variant: "destructive",
         title: "Invalid Username",
-        description: "Username must be at least 3 characters.",
+        description: "Username must be at least 1 characters.",
+      });
+      return;
+    }
+    
+    if (username.length > 7) {
+      toast({
+        variant: "destructive",
+        title: "Invalid Username",
+        description: "Username cant be more than 7 characters.",
       });
       return;
     }
