@@ -13,7 +13,7 @@ export default function Landing() {
         <motion.img 
           src="/logo_main.png"
           alt="Old Ellicott City Partnership Logo"
-          className="rounded object-contain"
+          className="rounded object-contain max-h-[20vh] h-auto w-auto"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
